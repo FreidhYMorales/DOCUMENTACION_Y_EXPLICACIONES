@@ -1,0 +1,31 @@
+#Sentencias condicionales
+
+#pedir datos al usuario, aqui el dato ingresado se guarda como string aqui no nos funciona para hacer operaciones matematicas
+numero = input("Ingrese un numero: ")
+print(type(numero))
+
+#De esta forma podemos cambiara o declarar el tipo de variable por una de cualquie tipo
+#int() para variables enteras
+#float() para variables flotantes o decimales
+#bool() para variables booleanas
+#str() para variables string
+numero = int(numero)
+print(type(numero))
+
+#Pedir datos al usuario, de esta forma podemos pedir un tipo de dato en concreto, en este caso entera
+numero = int(input("Ingrese un numero: "))
+
+#Primera condicional
+#Si el numero es igual a 2 imprime que el numero es 2
+if numero == 2:
+    print("Su numero es 2!!")
+#Segunda condicional
+#elif es para agregar otra condicional a revisar, en este caso si el numero es mayor a 10
+elif numero > 10:
+    print("Su nuemro es mayor a 10!!")
+#Tercer condicional, igual a la de arriba solo que ve si es menor a 10
+elif numero < 10:
+    print("Su numero es menor a 10!!")
+#El else es para cuando no cumple ninguna condicion
+else:
+    print("Esto no aparece en consola!!")

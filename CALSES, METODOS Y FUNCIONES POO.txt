@@ -1,0 +1,82 @@
+#PROGRAMACION ORIENTADA A OBJETOS
+
+                #CLASES
+                            #  Variable         
+                            # Contenedora         tipo de        
+                            # Del objeto           objeto      (PARAMETROS GENERALES DEL OBJETO)
+                            #     |                  |               |         |         |
+                            #    \|/                \|/             \|/       \|/       \|/
+                            #   silla      =       silla         (*color,  *material, *tamaño)
+
+#EJEMPLO
+#la variable string es del tipo str, que contiene la cadena de caracteres "Cadena"
+string = str("Cadena") 
+
+                #Aqui la variable pertenece a una clase que tiene ciertos metodos o se pueden aplicar ciertas funciones
+                            # VARIABLE  METODO    PARAMETROS DEL METODO
+                            #   |          |               |
+                            #  \|/        \|/             \|/
+                            # auto    .arrancar  (*parametros_de_metodo)
+#EJEMPLO
+#a la variables string le aplico el metodo find para buscar una sub cadena, donde el parametro a buscar es "Cad"
+string.find("Cad")
+
+#los metodos son aplicables a a los objetos que sean del mismo tipo, ya que la forma de trabajar no es igual de una clase a otra
+#las funciones son aplicables a cualquier tipo de objeto, ya que la forma de trabajar es igual para todos ya que su estructura son iguales
+#en resumen los metodos son especificos y las funciones son generales
+#EJEMPLO
+"""
+numero = 125
+cadena = "PALABRAS"
+print(dir(numero)) #aqui se imprimen todos los metodos que se pueden aplicar a la variable numero propia de los int 
+print("\n\n")
+print(dir(cadena)) #aqui se imprimen todos los metodos aplicables a la variable cadena propia de los str
+"""
+
+#CREACION DE CLASES EN PYTHON
+#definimos una clase del tipo operacion
+class Operacion:
+    #definimos un inicializador que se llama a si misma en donde se pueden pasar dos parámetros para la propia clase 
+    def __init__(self, operador1, operador2):
+        self.operador1 = operador1
+        self.operador2 = operador2
+    def sumar(self):
+        print(f"La suma es: {self.operador1 + self.operador2}")
+    def restar(self):
+        print(f"La resta es: {self.operador1 - self.operador2}")
+    def multiplicar(self):
+        print(f"La multiplicacion es: {self.operador1 * self.operador2}")
+    def divicion(self):
+        print(f"La division es: {self.operador1 / self.operador2}")
+    def potencia(self):
+        print(f"La potencia es: {self.operador1 ** self.operador2}")
+
+#Pedir dos datos
+numeros = list() #creamos una lista vacia
+
+#Pedimos dos numeros
+for i in range(2):
+    numeros.append(int(input(f"ingrese el {i+1} numero: ")))
+
+#variable opera que contiene dos parametros, el primero es para guardar el primer operador y el segundo para el segundo operador
+opera = Operacion(*numeros)
+
+#Aplicamos los metodos de la clase a la variable opera
+opera.sumar()       #imprime la suma de dos numeros
+opera.restar()      #imprime la resta de dos numeros
+opera.multiplicar() #imprime la multiplicacion de dos numeros
+opera.divicion()    #imprime la division de dos numeros
+opera.potencia()    #imprime la potencia de dos numeros
+
+class persona:
+    def __init__(self, nombre, apellido):
+        self.nombre = nombre
+        self.apellido = apellido
+    def saludo(self):
+        print(f"Hola mi nombre es {self.nombre} {self.apellido}!!")
+        
+nombre_completo = persona("Walter", "Figueroa")
+nombre_completo.saludo() #imprime un saludo con el nombre y apellido de la persona 
+
+nombre_completo = persona("Freid", "Morales")
+nombre_completo.saludo() #imprime un saludo con el nombre y apellido de la persona 
